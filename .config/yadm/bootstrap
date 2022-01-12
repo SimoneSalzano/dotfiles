@@ -1,0 +1,42 @@
+#!/bin/bash
+
+install_nerd_font() {
+    if ! fc-list -q "FiraCode Nerd Font"; then
+        echo "[-] Downloading FiraCode Nerd Font [-]"
+        if [ ! -d "${HOME}/.fonts" ]; then
+            mkdir "${HOME}/.fonts"
+        fi
+        wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
+        unzip -qq FiraCode.zip -d ~/.fonts
+        fc-cache -fv
+        echo "done!"
+    fi
+}
+
+install_starship() {
+    if ! command -v starship > /dev/null; then
+        echo "[-] Downloading Starship [-]"
+        sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+        echo "done!"
+    fi
+}
+
+install_exa() {
+    if ! command -v exa > /dev/null; then
+        echo "[-] Downloading Exa [-]"
+        if [ "$(uname -m)" == "x86_64" ]; then
+            wget -q https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip
+            mkdir ~/.exa_temporary
+            unzip -qq exa-linux-x86_64-v0.10.1.zip -d ~/.exa_temporary
+            sudo mv ~/.exa_temporary/bin/exa /usr/local/bin
+            rm -r ~/.exa_temporary
+            echo "done!"
+        else
+            echo "This install script doesn't support installing exa on non-x86_64 architectures. You should install it manually!" 1>&2
+        fi
+    fi
+}
+
+install_nerd_font
+install_starship
+install_exa

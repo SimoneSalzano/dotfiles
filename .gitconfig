@@ -1,0 +1,37 @@
+[user]
+	name = Simone Salzano
+	email = salzanosimone99@gmail.com
+
+[github]
+	user = SimoneSalzano
+
+[init]
+	defaultBranch = main
+
+[color]
+	ui = auto
+	branch = auto
+	diff = auto
+	grep = auto
+	interactive = auto
+	status = auto
+
+[commit]
+	template = ~/.gitmessage
+
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore_global
+
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+
+[url "http://github.com/"]
+	insteadOf = "gh:"

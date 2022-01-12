@@ -1,0 +1,13 @@
+# vim:ft=gitcommit:tw=72:sw=2:ts=2:expandtab:spell
+#
+# 50-character subject line
+#
+# If applied, this commit will...
+
+#Leave a blank line to separate title from description.
+
+# 72-character wrapped longer description.
+#
+# Why is this change needed?
+
+# How does it address the issue?
