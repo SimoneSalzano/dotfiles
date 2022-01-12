@@ -35,3 +35,6 @@
 
 [url "http://github.com/"]
 	insteadOf = "gh:"
+
+[url "git@github.com:"]
+	insteadOf = "gssh:"
