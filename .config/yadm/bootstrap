@@ -8,7 +8,8 @@ install_nerd_font() {
         fi
         wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
         unzip -qq FiraCode.zip -d ~/.fonts
-        fc-cache -fv
+        fc-cache -fv &> /dev/null
+        rm -r FiraCode.zip
         echo "done!"
     fi
 }
@@ -29,7 +30,7 @@ install_exa() {
             mkdir ~/.exa_temporary
             unzip -qq exa-linux-x86_64-v0.10.1.zip -d ~/.exa_temporary
             sudo mv ~/.exa_temporary/bin/exa /usr/local/bin
-            rm -r ~/.exa_temporary
+            rm -r ~/.exa_temporary exa-linux-x86_64-v0.10.1.zip
             echo "done!"
         else
             echo "This install script doesn't support installing exa on non-x86_64 architectures. You should install it manually!" 1>&2
