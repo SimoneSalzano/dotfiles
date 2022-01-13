@@ -41,14 +41,14 @@
       :init
       (setq org-roam-v2-ack t)
       :custom
-      (org-roam-directory (file-truename "/mnt/d/Documents/Notes"))
+      (org-roam-directory (file-truename "~/Documents/Notes"))
       (org-roam-completion-everywhere t)
       (org-roam-capture-templates
         '(("d" "default" plain "%?"
            :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+author: Simone Salzano\n#+date:%U\n")
            :unarrowed t))
         )
-      (org-id-location-file (file-truename "/mnt/d/Documents/Notes/.orgids"))
+      (org-id-location-file (file-truename "~/Documents/Notes/.orgids"))
       :bind (("C-c n l" . org-roam-buffer-toggle)
              ("C-c n f" . org-roam-node-find)
              ("C-c n g" . org-roam-graph)
@@ -72,7 +72,7 @@
           org-roam-ui-update-on-save t
           org-roam-ui-open-on-start t)
 
-(setq org-roam-dailies-directory "/mnt/d/Documents/Notes/daily/")
+(setq org-roam-dailies-directory "~/Documents/Notes/daily/")
 
 (setq org-roam-dailies-capture-templates
       '(("d" "default" entry
