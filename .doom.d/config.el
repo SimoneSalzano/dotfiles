@@ -3,7 +3,7 @@
 (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
       doom-themes-enable-italic t) ; if nil, italics is universally disabled
 (setq doom-theme 'doom-one)
-(setq doom-font "Cascadia Code 12")
+(setq doom-font "FiraCode Nerd Font 11")
 (setq display-line-numbers-type t)
 (defvar fancy-splash-image-template
   (expand-file-name "~/.doom.d/logo.png" doom-private-dir)
