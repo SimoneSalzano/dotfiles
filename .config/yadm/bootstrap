@@ -40,8 +40,10 @@ install_exa() {
 
 install_nvm() {
     if ! command -v nvm > /dev/null;then
-    echo "[-] Downloading nvm [-]"
-    curl -s -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+        echo "[-] Downloading nvm [-]"
+        curl -s -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+        echo "done!"
+    fi
 }
 
 install_nerd_font
