@@ -120,10 +120,7 @@ fi
 export PATH="$HOME/.emacs.d/bin:$PATH"
 export DOOMDIR="$HOME/.doom.d"
 
-#configure exa to run how I usually run it without passing all the flags manually
-
-
-_distro=$(awk '/^ID=/' /etc/*-release | awk -F'=' '{ print tolower($2) }')
+_distro=$(awk '/^ID=/' /etc/*-release 2> /dev/null | awk -F'=' '{ print tolower($2) }')
 
 # set an icon based on the distro
 case $_distro in
